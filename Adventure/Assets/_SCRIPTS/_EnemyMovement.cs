@@ -33,7 +33,7 @@ public class _EnemyMovement : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
-        else if (isRight == false)
+        else
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }

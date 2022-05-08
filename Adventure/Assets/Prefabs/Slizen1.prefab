@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7929055759502086875}
   - component: {fileID: 7929055759502086871}
   - component: {fileID: 7929055759502086870}
+  - component: {fileID: 304111607988734919}
   m_Layer: 0
   m_Name: Slizen1
   m_TagString: Untagged
@@ -161,3 +162,16 @@ MonoBehaviour:
   positions:
   - {x: 2.883, y: -2.23, z: 0}
   - {x: 7.217, y: -2.23, z: 0}
+--- !u!114 &304111607988734919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7929055759502086872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8e83933f81f2a49af582a5e821c923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 30
