@@ -51,7 +51,7 @@ public class _EnemyDeath : MonoBehaviour
         _EnemyMovement script1 = enemy.GetComponent<_EnemyMovement>();
         script1.enabled = false;
         animator.Play("SlizenDeathAnimation");
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
         script1.enabled = true;
         DropGoldCoin();
