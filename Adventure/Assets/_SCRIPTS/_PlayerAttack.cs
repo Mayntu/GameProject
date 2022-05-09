@@ -8,6 +8,7 @@ public class _PlayerAttack : MonoBehaviour
     private bool isAttacking = false;
     [SerializeField] GameObject AttackHitBox;
     private int playerDamage = 10;
+
     public int PlayerDamage
     {
         get { return this.playerDamage; }

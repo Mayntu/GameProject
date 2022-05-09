@@ -10,6 +10,11 @@ public class _EnemyMovement : MonoBehaviour
     private bool isRight = false;
     public void FixedUpdate()
     {
+            Movement();
+            IsRight();
+    }
+    void Movement()
+    {
         transform.position = Vector3.MoveTowards(transform.position, positions[currentTarget], speed);
 
         if (transform.position == positions[currentTarget])
@@ -25,7 +30,6 @@ public class _EnemyMovement : MonoBehaviour
                 isRight = false;
             }
         }
-        IsRight();
     }
     public void IsRight()
     {
