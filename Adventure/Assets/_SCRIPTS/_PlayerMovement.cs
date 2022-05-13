@@ -8,9 +8,10 @@ public class _PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 1f;
     [SerializeField] private Vector3 leftVector, rightVector, upVector;
     private bool isRight = true;
+    Animator animator;
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -33,11 +34,13 @@ public class _PlayerMovement : MonoBehaviour
         {
             isRight = false;
             Move(leftVector);
+            //animator.Play("PlayerMovementAnimation");
         }
         if (right)
         {
             isRight = true;
             Move(rightVector);
+            //animator.Play("PlayerMovementAnimation");
         }
         if (up)
         {
