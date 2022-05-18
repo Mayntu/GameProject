@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1205749945}
   m_Layer: 0
   m_Name: Slizen1
-  m_TagString: Slizen
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 207
   m_Sprite: {fileID: 21300000, guid: bca10159ec7700740b48a5deca5fd8f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13812232, y: 0.01192975}
+  m_Offset: {x: 0.13812232, y: 0.04311043}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.276743, y: 3.1968746}
+  m_Size: {x: 2.2230816, y: 3.1345134}
   m_EdgeRadius: 0
 --- !u!114 &7929055759502086871
 MonoBehaviour:
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f438dc698bc0345b12649b0e49e7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDamaging: 0
+  timeBetweenAttack: 1.15
 --- !u!114 &7929055759502086870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,10 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14970d5fb430247409e9ab72e5448a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.06
+  speed: 0.04
   positions:
-  - {x: 2.883, y: -2.23, z: 0}
-  - {x: 7.217, y: -2.23, z: 0}
+  - {x: 2.569, y: -2.097, z: 0}
+  - {x: 7.99, y: -2.097, z: 0}
 --- !u!114 &304111607988734919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,13 +178,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 30
+  Enemy: {fileID: 0}
   GoldCoin: {fileID: 0}
   transform1: {fileID: 7929055759502086868}
   SilverCoin: {fileID: 0}
   transform2: {fileID: 7929055759502086868}
   minGold: 1
   maxGold: 2
-  minSilver: 2
+  minSilver: 1
   maxSilver: 4
 --- !u!95 &1205749945
 Animator:

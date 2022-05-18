@@ -17,26 +17,28 @@ public class _EnemyDeath : MonoBehaviour
     }
     void Awake()
     {
-        off1 = new Vector3(Random.Range(-2, 2), 1);
-        off2 = new Vector3(Random.Range(-2, 2), 1);
+        off1 = new Vector3(Random.Range(-3, 3), 1);
+        off2 = new Vector3(Random.Range(-3, 3), 1);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "AttackHitBox")
+        if (collision.tag == "AttackHitBox")
         {
+            SetEnemy(gameObject);
             animator.Play("SlizenDamaged");
             Debug.Log(damage.PlayerDamage);
             hp -= damage.PlayerDamage;
-          
+
         }
     }
     void FixedUpdate()
     {
         DeathCheck();
     }
+    [SerializeField] private GameObject Enemy;
     void DeathCheck()
     {
-        if(hp <= 0)
+        if (hp <= 0)
         {
             isDead = true;
         }
@@ -47,15 +49,18 @@ public class _EnemyDeath : MonoBehaviour
     }
     IEnumerator DoDeath()
     {
-        GameObject enemy = GameObject.FindGameObjectWithTag("Slizen");
-        _EnemyMovement script1 = enemy.GetComponent<_EnemyMovement>();
-        script1.enabled = false;
+        _EnemyMovement script3 = Enemy.GetComponent<_EnemyMovement>();
+        script3.enabled = false;
         animator.Play("SlizenDeathAnimation");
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
-        script1.enabled = true;
+        script3.enabled = true;
         DropGoldCoin();
         DropSilverCoin();
+    }
+    public void SetEnemy(GameObject enemy)
+    {
+        Enemy = enemy;
     }
     [SerializeField] private GameObject GoldCoin;
     [SerializeField] private Transform transform1;
@@ -64,13 +69,13 @@ public class _EnemyDeath : MonoBehaviour
     [SerializeField] private int minGold, maxGold, minSilver, maxSilver;
     void DropGoldCoin()
     {
-        if(isDead == true)
+        if (isDead == true)
         {
             int countOfCoin = Random.Range(minGold, maxGold);
-            for(int i = 0; i < countOfCoin; i++)
+            for (int i = 0; i < countOfCoin; i++)
             {
                 Vector3 position = transform.position;
-                GameObject coin = Instantiate(GoldCoin, position + off1, Quaternion.identity);
+                GameObject coin = Instantiate(GoldCoin, position + off1 + new Vector3(i, 0, 0), Quaternion.identity);
                 coin.SetActive(true);
             }
         }
@@ -83,7 +88,7 @@ public class _EnemyDeath : MonoBehaviour
             for (int i = 0; i < countOfCoin; i++)
             {
                 Vector3 position = transform.position;
-                GameObject coin = Instantiate(SilverCoin, position += off2, Quaternion.identity);
+                GameObject coin = Instantiate(SilverCoin, position + off2 + new Vector3(i, 0, 0), Quaternion.identity);
                 coin.SetActive(true);
             }
         }
