@@ -23,17 +23,17 @@ public class _PatrolOfEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, point.position) < positionOfPatrol && angry == false)
+        if (Vector2.Distance(transform.position, point.position) < positionOfPatrol && angry == false)
         {
             chill = true;
         }
-        if (Vector2.Distance(transform.position, player.position) < stoppingDistance);
+        if (Vector2.Distance(transform.position, player.position) < stoppingDistance) ;
         {
             angry = true;
             chill = false;
             goBack = false;
         }
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance);
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance) ;
         {
             goBack = true;
             angry = false;
@@ -44,11 +44,11 @@ public class _PatrolOfEnemy : MonoBehaviour
         {
             Chill();
         }
-        else if(angry == true)
+        else if (angry == true)
         {
             Angry();
         }
-        else if(goBack == true)
+        else if (goBack == true)
         {
             GoBack();
         }
@@ -59,12 +59,12 @@ public class _PatrolOfEnemy : MonoBehaviour
     //}
     void Chill()
     {
-        if(transform.position.x > point.position.x + positionOfPatrol)
+        if (transform.position.x > point.position.x + positionOfPatrol)
         {
             movingRight = false;
             //isRight = false;
         }
-        else if(transform.position.x < point.position.x - positionOfPatrol)
+        else if (transform.position.x < point.position.x - positionOfPatrol)
         {
             movingRight = true;
             //isRight = true;
