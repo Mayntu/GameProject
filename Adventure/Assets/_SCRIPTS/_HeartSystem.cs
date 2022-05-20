@@ -96,14 +96,11 @@ public class _HeartSystem : MonoBehaviour
         script1.enabled = false;
         _PlayerAttack script2 = player.GetComponent<_PlayerAttack>();
         script2.enabled = false;
-        _EnemyMovement script3 = Enemy.GetComponent<_EnemyMovement>();
-        script3.enabled = false;
         animator.Play("PlayerDeathAnimation");
         yield return new WaitForSeconds(2.5f);
         Destroy(gameObject);
         script1.enabled = true;
         script2.enabled = true;
-        script3.enabled = true;
 
     }
     public void SetEnemy(GameObject enemy)

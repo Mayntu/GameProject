@@ -51,7 +51,7 @@ public class _CumenDeath : MonoBehaviour
     }
     IEnumerator DoDeath()
     {
-        _EnemyMovement script3 = Enemy.GetComponent<_EnemyMovement>();
+        _PatrolingEnemy script3 = Enemy.GetComponent<_PatrolingEnemy>();
         script3.enabled = false;
         animator.Play("CumenDeathAnimation");
         yield return new WaitForSeconds(1f);
